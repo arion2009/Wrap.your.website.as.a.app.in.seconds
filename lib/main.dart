@@ -4,7 +4,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'dart:async';
 
 const WEB_LINK = 'https://en.wikipedia.org/wiki/Kraken';
-const APP_TITLE = 'WebSite Browser';
+const APP_TITLE = 'WebSite Viewer';
 
 class NavigationControls extends StatelessWidget {
   const NavigationControls(this._webViewControllerFuture): assert(_webViewControllerFuture != null);
