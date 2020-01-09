@@ -3,6 +3,9 @@ import 'package:webview_flutter/webview_flutter.dart';
 //import 'package:url_launcher/url_launcher.dart';
 import 'dart:async';
 
+const WEB_LINK = 'https://en.wikipedia.org/wiki/Kraken';
+const APP_TITLE = 'WebSite Browser';
+
 class NavigationControls extends StatelessWidget {
   const NavigationControls(this._webViewControllerFuture): assert(_webViewControllerFuture != null);
 
@@ -54,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget buildAppBar(BuildContext context) {
      return AppBar(
-              title: const Text('Mid-Year Project'),
+              title: const Text(APP_TITLE),
               elevation: 0, // when elevation equal to 0, no border will be drawed.
               // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
               actions: <Widget>[ NavigationControls(_webViewController.future),      /// ?
@@ -65,8 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
  
   Widget buildWebView(BuildContext context) {
      return WebView(
-              initialUrl: //'https://en.wikipedia.org/wiki/Kraken',
-                          'https://sampleusername.wixsite.com/cxnflict', 
+              initialUrl: WEB_LINK,
               javascriptMode: JavascriptMode.unrestricted,  // allow javaScript in WebView
               onWebViewCreated: (WebViewController webViewController) {
                                   _webViewController.complete(webViewController);  /// what is complete?
